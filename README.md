@@ -3,7 +3,7 @@
 ### :school: ChungBukNationalUniversity - ComputerEnginnering
 <br></br>
 
-:calendar: Since 2023-03-20 ~ 
+:calendar: Since 2023-03-20 ~ ongoing
 <br></br>
 
 :two_men_holding_hands: Member Info
