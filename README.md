@@ -9,6 +9,7 @@
 :two_men_holding_hands: Member Info
 
 - [Hong-JinSuk](http://github.com/Hong-JinSuk) - CBNU_ComputerEnginnering, [E-mail](n9805h@naver.com) : n9805h@naver.com
+- [ByeongJun-Jang](http://github.com/ByeongJun-Jang) - CBNU_ComputerEnginnering, [E-mail](qudwns8616@gmail.com) : qudwns8616@gmail.com
 
 <br></br>
 #### :study: Activity
