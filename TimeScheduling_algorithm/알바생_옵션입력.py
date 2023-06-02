@@ -9,14 +9,17 @@ def input_part():
     Part = input()
     return Part
 
-def input_DayTime():
+def input_DayTime(Case):
     DayTime={}
-    for i in range(1):
-        print('일하는 날을 입력해주세요 :', end=' ')
-        Day=input()
-        print('일하는 시간을 입력해주세요 :', end=' ')
+    TTime=[]
+    Day=['월','화','수','목','금','토','일']
+    print('일하는 날을 입력해주세요 :', end=' ')
+    for i in range(3):
         Time=list(input().split())
-        DayTime[Day]=Time
+        print('/', end=' ')
+        TTime.append(Time)
+    for i,j in zip(Day, TTime):
+        DayTime[i]=j
     return DayTime
 
 def make_dict(Name,Part,DayTime):
