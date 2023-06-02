@@ -1,4 +1,4 @@
-from 시간분배_알고리즘 import employ_info
+from 알바생_옵션입력 import employ_info
 from 시간표_수요조사 import pre_backtrack
 import pandas as pd
 import numpy as np
