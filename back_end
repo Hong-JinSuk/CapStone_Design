@@ -1,0 +1,44 @@
+#터미널을 열고 디렉토리로 이동한 후, 'my app' 이름의 앱을 생성
+python manage.py startapp myapp
+
+#'mpapp/models.py'을 열고, 회월 정보를 저장할 모델 정의
+from django.db import models
+class User(models.Model):
+    username = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    email = models.EmailField()
+    
+# DB migrations
+    python manage.py makemigrations
+    python manage.py migrate
+# DB 관리자 계정 생성
+    python manage.py createsuperuser
+
+# 관리자 Page에 User 모델 등록
+from django.contrib import admin
+from .models import User
+
+admin.site.register(User)
+
+# 'mpapp/views.py' 열고, 뷰 작성
+from django.shortcuts import render, redirect
+from .forms import UserForm
+def register(request):
+    if request.method == 'POST':
+        form = UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('register_success')
+    else:
+        form = UserForm()
+    return render(request, 'register.html', {'form': form})
+
+# 'myproject/urls.py'열고, url 설정
+from django.urls import path
+from myapp.views import register
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('register/', register, name='register'),
+    # ...
+]
