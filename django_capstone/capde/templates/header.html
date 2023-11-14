@@ -1,0 +1,27 @@
+<div>
+    <br>
+    <a href="{% url 'alba_main' %}">
+    <div class="header_logo">
+        <h1>알바마켓</h1>
+    </div>
+</a>
+    <div class="header_nav">
+        <a href="{% url 'boards:board_list' %}"><span>커뮤니티</span></a> |
+        <a href="{% url 'timetable:save_schedule' %}"><span>시간표관리</span></a> |
+        <a href="{% url 'profileapp:create' %}"><span>정보수정</span></a> |
+        <a href="{% url 'main' %}"><span>로그아웃</span></a>
+        <!--
+        {% if not user.is_authenticated %}
+        <span>test</span>
+        {% else %}
+        <span>안녕하세요 {{user}}</span>
+        {% endif %}
+        -->
+    </div>
+</div>
+
+<!--
+<div style="height: 10rem; background-color:#38df81; border-radius:1rem; margin: 2rem;">
+    
+</div>
+-->

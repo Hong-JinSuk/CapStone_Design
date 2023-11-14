@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+{% include 'head.html' %}
+{% load bootstrap4 %}
+<style>
+        .a{
+                background-color: white;
+                height: 3rem;
+                width: 3rem;
+                
+        }
+</style>
+<body>
+        {% include 'header.html' %}
+        <form action="{% url 'index:create' %}" method="POST"></form>
+        
+        {% include 'footer.html' %}
+
+    
+</body>
+</html>

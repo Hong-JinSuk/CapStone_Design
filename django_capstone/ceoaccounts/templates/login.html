@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>login</title>
+</head>
+<body>
+    <div class="main">
+        <!--회원가입 폼-->
+        <div class="container register-form" id="register-form">
+            <form action="." id="register-form" method="POST" class="form">
+                {% csrf_token %}
+                <h2 class="form-title title">
+                    로그인
+                    {{ error }}
+                </h2>
+                <div class="form-icon"></div>
+                <span class="form-span">로그인 할 정보를 입력해주세요 !</span>
+                <input type="email" class="form-input" placeholder="ID" name="useremail">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                <input type="password" class="form-input" placeholder="Password" name="password">
+                {% if request.GET.next %}
+                    <input type="hidden" name="next" value="{{ request.GET.next }}">
+                {% endif %}
+                <button type="submit" class="form-button button">로그인</button>
+                <input type="button" value="간편 로그인" class="form-button button submit" onclick="easy_login()">
+            </form>
+        </div>
+        
+        <div class="switch" id="switch-form">
+            <div class="switch-circle"></div>
+            <div class="switch-circle switch-circle-t"></div>
+            
+            <div class="switch-form" id="switch-f1">
+                <h2 class="switch-title title">
+                    현재 점주 전용입니다
+                </h2>
+                <p class="switch-description description">
+                    알바분이면 아래를 클릭해주세요.
+                </p>
+                <a href="{% url 'ceo_accounts:ceo_register' %}">
+                    <button type="submit" class="form-button button">회원가입</button>
+                <a href="{% url 'accounts:login' %}">
+                <button class="switch-button button switch-btn">아르바이트로 이동</button></a>
+            </div>
+        </div>
+    </div>
+    <script defer src="/static/javascript/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+    <title>login</title>
+</head>
+<body>
+    <div class="main">
+        <!--회원가입 폼-->
+        <div class="container register-form" id="register-form">
+            <form action="." id="register-form" method="POST" class="form">
+                {% csrf_token %}
+                <h2 class="form-title title">
+                    회원가입
+                </h2>
+                <div class="form-icon"></div>
+                <span class="form-span">회원가입 할 정보를 입력해주세요 !</span>
+                <input type="text" class="form-input" id="username" placeholder="사용자 이름" name="username">
+                <input type="text" class="form-input" id="useremail" placeholder="사용자 이메일" name="useremail">
+                <input type="password" class="form-input" id="password" placeholder="비밀번호" name="password">
+                <input type="password" class="form-input" id="re_password" placeholder="비밀번호 확인" name="re_password">
+                <a href="#" class="form-link"></a>
+                <button type="submit" class="form-button button">회원가입</button>
+                
+                
+            </form>
+        </div>
+        <!--로그인 폼-->
+        <div class="container login-form" id="login-form">
+            <form action="." id="login-form" method="post" class="form">
+                {% csrf_token %}
+               
+                <h2 class="form-title title">
+                    회원가입
+                </h2>
+                <input type="submit" value="테스트">
+                <button type="submit" class="btn btn-primary">등록</button>
+<!--                <span class="form-span">회원가입 할 정보를 입력해주세요 !</span>
+                <input type="text" class="form-input" placeholder="ID" id="username" name="username">
+                <input type="email" class="form-input" placeholder="Email" id="useremail" name="useremail">
+                <input type="password" class="form-input" placeholder="Password" id="password" name="password">
+                <input type="password" class="form-input" placeholder="Re Password" id="re_password" name="re_password">
+                <a href="#" class="form-link"></a>
+                <button type ="submit" class="form-button button submit">회원가입</button>
+                <input type="button" value="카카오 간편로그인" class="form-button button submit" onclick="kakaoLogin()">
+                <input type="button" value="네이버 간편로그인" class="form-button button submit" id="naverIdLogin_loginButton"> -->
+            </form>
+        </div>
+        
+        <div class="switch" id="switch-form">
+            <div class="switch-circle"></div>
+            <div class="switch-circle switch-circle-t"></div>
+            
+            <div class="switch-form" id="switch-f1">
+                <h2 class="switch-title title">
+                    현재 점주 전용입니다
+                </h2>
+                <p class="switch-description description">
+                    알바분이면 아래를 클릭해주세요.
+                </p>
+                <a href="{% url 'ceo_accounts:ceo_login' %}">
+                    <button type="submit" class="form-button button">로그인</button>
+                </a>
+                <a href="{% url 'accounts:register' %}">
+                <button class="switch-button button switch-btn">아르바이트로 이동</button></a>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js" charset="utf-8"></script>
+    <script>
+
+        var naverLogin = new naver.LoginWithNaverId(
+                {
+                    clientId: "l0fSCfCXF0XRQ3gjvaJv", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
+                    callbackUrl: "http://127.0.0.1:8000//naverlogin", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.
+                    isPopup: false,
+                    callbackHandle: true
+                }
+            );	
+        
+        naverLogin.init();
+        
+        window.addEventListener('load', function () {
+            naverLogin.getLoginStatus(function (status) {
+                if (status) {
+                    var email = naverLogin.user.getEmail(); // 필수로 설정할것을 받아와 아래처럼 조건문을 줍니다.
+                    
+                    console.log(naverLogin.user); 
+                    
+                    if( email == undefined || email == null) {
+                        alert("이메일은 필수정보입니다. 정보제공을 동의해주세요.");
+                        naverLogin.reprompt();
+                        return;
+                    }
+                } else {
+                    console.log("callback 처리에 실패하였습니다.");
+                }
+            });
+        });
+        
+        
+        var testPopUp;
+        function openPopUp() {
+            testPopUp= window.open("https://nid.naver.com/nidlogin.logout", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=1,height=1");
+        }
+        function closePopUp(){
+            testPopUp.close();
+        }
+    </script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        Kakao.init('9ad246a6f03246ec6a6634e45c474a40'); //발급받은 키 중 javascript키를 사용해준다.
+        console.log(Kakao.isInitialized());
+    function kakaoLogin() {
+        Kakao.Auth.login({
+            success: function (response) {
+                Kakao.API.request({
+                    url: '/v2/user/me',
+          success: function (response) {
+        	  console.log(response)
+          },
+          fail: function (error) {
+            console.log(error)
+          },
+        })
+      },
+      fail: function (error) {
+        console.log(error)
+      },
+    })
+  }
+    </script>
+    <script defer src="/static/javascript/script.js"></script>
+</body>
+</html>
