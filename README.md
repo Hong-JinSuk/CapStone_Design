@@ -22,7 +22,7 @@
 - [x] 4/28 feedback by professor
 - [x] 5/1 Submission of mid-course
 
-
+<br></br>
   Model Compositoin
 ```
 Accounts { // ceo_accounts 동일
