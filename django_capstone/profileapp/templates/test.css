@@ -1,0 +1,446 @@
+@charset "utf-8";
+
+html,body {background-color:#fff}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td {margin:0;padding:0;font-family:'Malgun Gothic', -apple-system, BlinkMagSystemFont, 'Noto sans','Droid sans','Apple SD Gothic Neo','AppleGothicNeoSD','Microsoft NeoGothic',Sans-serif;font-size:14px;line-height:1.2;letter-spacing:-0.5px}
+body {position:relative;min-width:320px;color:#000}
+button {padding:0;font-family:'Malgun Gothic',-apple-system, BlinkMagSystemFont, 'Noto sans','Droid sans','Apple SD Gothic Neo','AppleGothicNeoSD','Microsoft NeoGothic', Sans-serif;font-size:14px;line-height:1.2;cursor:pointer}
+input[type=text]::-ms-clear, input[type=password]::-ms-clear, input[type=text]::-ms-clear, input[type=email]::-ms-clear,input[type="tel"]::-ms-clear, input[type="number"]::-ms-clear {display:none}
+input[type="search"] {-webkit-appearance:textfield;box-sizing:content-box}
+input[type="radio"],input[type="checkbox"] {opacity:0;filter:alpha(opacity=0)}
+input[type="text"],input[type="password"],input[type="email"],input[type="url"],input[type="tel"],input[type="number"],textarea {width:100%;border:0;resize:none}
+.hide {overflow:hidden;visibility:hidden;position:absolute !important;top:-999em;left:-999em;width:0;height:0;font-size:0}
+.hidden {overflow:hidden;position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;clip:rect(0 0 0 0)}
+.filter {z-index:998;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;filter:alpha(opacity=40);opacity:0.4}
+
+ /* input */
+::placeholder {color:#bbb}
+::-webkit-input-placeholder {color:#bbb}
+:-ms-input-placeholder {color:#bbb}
+::-ms-input-placeholder {color:#bbb}
+:-moz-input-placeholder {color:#bbb}
+::-moz-input-placeholder {color:#bbb}
+.placeholder {color:#bbb}  /* IE9이하 placeholder color (placeholder 스크립트 지원) */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"] {width:100%;height:44px;margin:1px 0;box-sizing:border-box;border-radius:0;font-size:14px;background-color:transparent;-webkit-appearance:none}
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus {border-color:#3457f1;outline:none}
+
+/* class - radio/checkbox */
+span.input {position:relative;display:inline-block}
+span.input input {position:absolute;left:0}
+span.input label {display:inline-block;height:20px;padding:0 0 0 25px;line-height:19px;vertical-align:middle;color:#000}
+span.input label.agree-label--info-reception {height:auto !important}
+span.input label.agree-label--info-reception span {color:#2346e4}
+@media (min-width:360px) and (max-width:639px){
+  span.input label.agree-label--info-reception span {display:block}
+}
+span.input label.notel {color:#666}
+span.input input[type="checkbox"] + label {background:url('//image.alba.kr/m/input_checkbox_v3.png') no-repeat 0 0;background-size:20px 140px}
+span.input input[type="checkbox"]:checked + label {background-position:0 -60px}
+span.input input[type="checkbox"]:disabled + label {background-position:0 -120px}
+
+span.input input[type="radio"] + label {background:url('//image.alba.kr/m/input_radio_v3.png') no-repeat 0 0;background-size:20px 140px}
+span.input input[type="radio"]:checked + label {background-position:0 -60px}
+span.input input[type="radio"]:disabled + label {background-position:0 -120px}
+
+span.input.disabled label {color:#999}
+html.pc span.input label {cursor:pointer}
+
+.agree-label {line-height:19px !important;color:#666 !important}
+.agree-label--all {font-size:15px !important;color:#000 !important}
+.agree-label em {color:#000}
+.agree-label em.agreement-emphasis {color:#ff2a2a}
+.invisible-label {font-size:0;color:transparent !important}
+
+/* Section */
+#Section {margin:0 auto}
+html.mobile #Section {padding:0 16px 50px}
+html.mobile body#ChangePwdGuide #Section {padding:60px 20px 0 !important}
+html.mobile body.ALBA #Section {padding-top:60px}
+html.mobile body.ALBA #Section.oldApp {padding-top:6px}
+
+#Section.sectionFixed {padding-bottom:67px}
+#Section::after {content:"";display:block;clear:both}
+
+#Section .header {padding:0 0 14px;font-weight:bold;font-size:24px;text-align:center;line-height:normal;letter-spacing:-0.05em}
+#Section .header em {color:#3457f1}
+html.pc #Section {box-sizing:border-box;width:580px;margin:40px auto 50px;padding:0 40px 60px;border:1px solid #eaedf3;background:#fff}
+html.pc #Section .header {padding:30px 0;font-size:28px}
+html.pc #Section .joinComplete .header {display:block;padding:70px 0;font-size:23px;line-height:2}
+html.pc #Section .joinComplete .header>span {font-size:28px}
+
+html.mobile #Section .header {display:none;z-index:9999;position:fixed;top:0;right:0;left:0;height:44px;padding:0 0 0 40px;font-weight:normal;font-size:17px;line-height:44px;letter-spacing:-0.3px;text-align:left;color:#222;background-color:#ffeb00}
+html.mobile.ios #Section .header {line-height:46px}
+html.mobile #Section .header.title {padding-left:17px}
+html.mobile.ios #Section .header {position:absolute !important}
+html.mobile body.biz #Section .header {color:#fff;background-color:#5699ff}
+html.mobile body.ALBA #Section .header {display:block}
+html.mobile #Section .header .backBtn {position:absolute;top:0;left:5px;width:16px;height:24px;padding:10px}
+html.mobile #Section .header .backBtn>span {display:block;width:16px;height:24px;font-size:0;color:transparent;background:url('//image.alba.kr/m/header_202008.png') no-repeat -76px -48px;background-size:144px auto}
+html.mobile body.biz #Section .header .backBtn>span {background-position:-76px -96px}
+html.pc #Section .header .backBtn {display:none}
+
+/* class - btn */
+.btn {display:inline-block;text-align:center;vertical-align:middle}
+.btn.btnType1 {border:1px solid #ffe100;background:#fff230}
+body.biz .btn.btnType1,
+.searchWrap.biz .btn.btnType1 {color:#fff !important;border:1px solid #006fff;background:#3396fe}
+.btn.btnType2 {color:#fff !important;background-color:#56585a}
+.btn.btnType3 {background-color:#fff}
+.btn.btnType4 {color:#fff;background-color:#838d9a}
+.btn.btnType5 {background-color:#f4f5f5}
+.btn.blue,
+.btn.biz {color:#fff !important;border:1px solid #006fff;background:#3396fe}
+
+/* class - btnAction */
+.btnAction {margin-top:16px;padding:0;text-align:center}
+#JoinBiz .btnAction,
+#JoinActing .btnAction {margin-top:15px}
+#ChangePerson .btnAction,
+#ChangeBiz .btnAction {padding-top:15px}
+.btnAction.bottom {padding:0 15px 30px;background-color:#fff}
+.btnAction .btn {display:block;box-sizing:border-box;width:100%;height:50px;border-radius:8px;font-size:16px;font-family:'HGSoftGGothicssi60g';line-height:49px;cursor:pointer;color:#000}
+.btnAction ul:after {content:"";display:block;clear:both;height:0;visibility:hidden}
+.btnAction li {float:right;width:48%}
+.btnAction li:first-child {float:left}
+html.ios .btnAction .btn {line-height:52px}
+html.pc .btnAction.bottom {padding:0}
+
+/* class - formLayer */
+.formLayer {z-index:999;display:none;position:fixed;left:0;top:0;width:100%;height:100%}
+.formLayer .layer {z-index:999;overflow:hidden;position:fixed;left:50%;top:50%;background:#fff;border-radius:5px}
+.formLayer .layer .layerContents {padding:20px}
+.formLayer .layer .closeBtn {position:absolute;right:20px;top:20px;width:16px;height:16px;font-size:0;color:transparent;background:url('/images/common/icon.png') no-repeat -252px 0}
+.formLayer .layer.over {overflow:visible}
+.formLayer .layer.over .closeBtn {top:-28px;right:-2px;padding:5px;background-color:#fff;background-position:-247px 5px;border:2px solid #555;border-bottom:0 none}
+
+.sign__layer-header {position:relative;border-bottom:1px solid #ddd;background-color:#fff}
+.sign__layer-title {height:45px;font-weight:bold;font-size:16px;text-align:center;line-height:45px}
+.sign__layer-contents {padding:15px;background-color:#fff}
+.sign__layer-comment {font-size:14px;line-height:1.43;color:#666}
+.sign__layer-radiobox {line-height:49px;margin: -25px 0 0 0}
+.sign__layer-radiobox .input {box-sizing:border-box;display: block;border-bottom: solid 1px #f1f2f3}
+.sign__layer-guide-wrap {padding:10px 0}
+.sign__layer-guide-list--ipin {display:none}
+.sign__layer-guide-item {position:relative;padding-left:8px;font-size:12px;line-height:1.5;color:#2e89e5}
+.sign__layer-guide-item>span {position:absolute;top:0;left:0;color:#2e89e5}
+.sign__layer-explain-list {padding:10px 0 0px;border-top:1px solid #eee}
+.sign__layer-explain-item {position:relative;padding-left:7px;font-size:11px;line-height:1.5;color:#999}
+.sign__layer-explain-item>span {position:absolute;top:0;left:0;color:#999}
+.sign__layer-input-wrap {padding:15px 0}
+.sign__layer-input-wrap>input {height:46px;padding:0 12px;border:1px solid #ddd}
+.sign__layer-input-wrap .msg {font-size:11px;color:#2346e4}
+.sign__layer-input-wrap .msg>em {color:#f00}
+.sign-layer-close {position:absolute;top:0;right:0;padding:15px}
+.sign-layer-close>span {display:block;width:15px;height:15px;font-size:0;color:transparent;background:url('//image.alba.kr/sign/sign_layer_icon.png') no-repeat;background-size:72px 72px}
+.sign-layer-submit {display:block;width:100%;height:54px;border-radius:6px;box-shadow:none;line-height:54px;letter-spacing:-0.8px;font-family:'HGSoftGGothicssi60g';font-size:16px;color:#000;text-align:center}
+.sign-layer-submit--fix {position:absolute;bottom:0;left:0}
+.biz .sign-layer-submit {color:#fff !important;background-color:#3396fe !important}
+
+html.ios .sign__layer-title {line-height:46px}
+
+/* 우편번호 검색 레이어 */
+#addrResult .layer {width:496px;margin-left:-250px;-webkit-overflow-scrolling:touch}
+#addrResult .guide {margin-top:8px;font-size:13px}
+#addrResult .guide em {color:#ff5400}
+#addrResult .addrInput {position:relative;height:42px;padding-right:54px}
+#addrResult .addrInput input {height:40px;line-height:40px;text-indent:5px;border:1px solid #c6c9cf}
+#addrResult .addrInput .btn {position:absolute;right:0;top:0;width:52px;height:40px;font-weight:bold;line-height:40px}
+#addrResult .addrList {margin-top:20px}
+#addrResult .addrList ul {position:relative;overflow-x:hidden;overflow-y:auto;max-height:335px;border:1px solid #c6c9cf}
+#addrResult .addrList ul li {min-height:0;padding:0;border-top:1px solid #eff2f7}
+#addrResult .addrList ul li:first-child {border-top:0 none}
+#addrResult .addrList ul li a {position:relative;display:block;padding:13px 10px 13px 72px}
+#addrResult .addrList ul li a span {position:absolute;left:10px;top:13px}
+#addrResult .addrList .guide {color:#999}
+html.mobile #addrResult .layer {width:316px;margin-left:-160px}
+html.mobile #addrResult .guide {font-size:11px}
+html.mobile #addrResult .addrList ul {max-height:180px}
+html.mobile #addrResult .addrList ul li a {font-size:12px}
+
+/* class - colWrap */
+.colWrap {position:relative;width:100%}
+.colWrap:after {content:" ";display:block;clear:both;height:0;visibility:hidden}
+.colWrap .col {float:left;width:100%;margin-left:4px}
+.colWrap .col.first {margin-left:0 !important}
+.colWrap.two .col {width:50%}
+.colWrap.three .col {width:33.33%}
+.colWrap.four .col {width:25%}
+.colWrap .cell,
+.colWrap .dash {display:none}
+.colWrap .col .btn {display:block}
+
+/* 로딩중 */
+.loadingFilter {display:none}
+.loadingFilter .filter {z-index:8;position:fixed;left:0;top:0;width:100%;height:100%;background:#fff;filter:alpha(opacity=50);opacity:0.5}
+.loadingFilter img {z-index:9;position:fixed;left:50%;top:50%;margin:-64px 0 0 -64px}
+
+.loading-css {display:none;z-index:999;position:fixed;top:0;right:0;bottom:0;left:0}
+.loading-css__action {z-index:999;position:fixed;top:50%;left:50%;width:64px;height:64px;margin:-32px 0 0 -32px}
+.loading-css__action span {position:absolute;top:26px;width:12px;height:12px;border-radius:50%;background:#fff;animation-timing-function:cubic-bezier(0, 1, 1, 0)}
+.loading-css__action span:nth-child(1) {left:6px;animation:loading-css1 0.5s infinite}
+.loading-css__action span:nth-child(2) {left:6px;animation:loading-css2 0.5s infinite}
+.loading-css__action span:nth-child(3) {left:26px;animation:loading-css2 0.5s infinite}
+.loading-css__action span:nth-child(4) {left:46px;animation:loading-css3 0.5s infinite}
+@-webkit-keyframes loading-css1 {
+  0% {transform:scale(0)}
+  100% {transform:scale(1)}
+}
+@keyframes loading-css1 {
+  0% {transform:scale(0)}
+  100% {transform:scale(1)}
+}
+@-webkit-keyframes loading-css2 {
+  0% {transform:translate(0, 0)}
+  100% {transform:translate(20px, 0)}
+}
+@keyframes loading-css2 {
+  0% {transform:translate(0, 0)}
+  100% {transform:translate(20px, 0)}
+}
+@-webkit-keyframes loading-css3 {
+  0% {transform:scale(1)}
+  100% {transform:scale(0)}
+}
+@keyframes loading-css3 {
+  0% {transform:scale(1)}
+  100% {transform:scale(0)}
+}
+
+/* class - pagination/paging */
+.pagination {width:100%;margin:10px 0;text-align:center}
+.pagination a {overflow:hidden;display:inline-block;width:28px;height:28px;margin:0 3px;padding:0;border:1px solid #e8e8e8;font-size:14px;line-height:29px;color:#666;background-color:#fff}
+.pagination a.prev span {display:inline-block;width:7px;height:12px;margin-top:8px;font-size:0;color:transparent;vertical-align:top;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -180px -72px}
+.pagination a.next span {display:inline-block;width:7px;height:12px;margin-top:8px;font-size:0;color:transparent;vertical-align:top;background:url('//image.alba.kr/m/icon_v1.png') no-repeat -216px -72px}
+.pagination a.pageNum.on {border-color:#facc00;font-weight:bold;color:#fff;background-color:#ffd100}
+@media screen and (-webkit-min-device-pixel-ratio:1.5){
+	.pagination a.prev span,
+	.pagination a.next span {background-image:url('//image.alba.kr/m/icon_v1_300.png');background-size:720px 432px}
+}
+
+/* 도로명 주소(정부) */
+.addr-road {overflow-x:hidden;overflow-y:auto;height:300px;padding:15px;background-color:#fff}
+.addr-road__search {margin-bottom:10px}
+.addr-road__input {position:relative;height:41px;margin-bottom:3px;padding-right:40px;border:2px solid #186bb9}
+.addr-road__input>legend {overflow:hidden;visibility:hidden;position:absolute;top:-999em;left:-999em;width:0;height:0;font-size:0}
+.addr-road__input>input {width:100%;height:41px;border:0 none;font-size:13px;text-indent:10px;color:#222;background-color:#fff !important}
+.addr-road__input>button {position:absolute;top:0;right:0;width:40px;height:40px;font-size:0;color:transparent;background:#fff url('//image.alba.kr/m/header.png') no-repeat -80px -80px;background-size:160px 160px}
+.addr-road__example {font-size:12px;color:#186bb9}
+
+.addr-road__count {margin-bottom:7px;font-size:12px}
+.addr-road__count>span {font-weight:bold}
+.addr-road__count>strong {color:#186bb9}
+.addr-road__count-no {padding:30px 0;border-top:1px solid #000;border-bottom:1px solid #000;text-align:center}
+
+.addr-road__list {border:0 none;border-collapse:collapse}
+.addr-road__list th {padding:8px 0;border-top:1px solid #000;border-bottom:1px solid #000;font-size:12px;text-align:center}
+.addr-road__list td {padding:5px 0;border-bottom:1px solid #000;font-size:12px;text-align:center}
+.addr-road__list tr:nth-child(odd) td {background-color:#f7f7f7}
+.addr-road__list-no {width:10%}
+.addr-road__list-addr {width:70%}
+.addr-road__list-zipcode {width:20%}
+.addr-road__list td.addr-road__list-addr {text-align:left}
+
+/* 휴대폰인증안내 */
+.cert-question-icon {position:absolute;top:15px;left:65px;width:20px;height:20px;font-size:0;color:transparent;background:url('//image.alba.kr/sign/join_v1.png') no-repeat 2px 2px;background-size:144px 144px}
+.cert-guide-layer {z-index:999;display:none;position:absolute;top:0;right:14px;left:14px;padding:11px 14px;border:1px solid #cec9c2;border-radius:8px;background-color:#f0edea}
+.cert-guide-title {margin-bottom:13px;font-size:13px}
+.cert-guide-rule {position:relative}
+.cert-guide-rule>dt {font-weight:bold;font-size:13px;line-height:1.54}
+.cert-guide-rule>dd {padding-left:7px;font-size:13px;line-height:1.54}
+.cert-guide-rule>dd>.dot {position:absolute;width:2px;height:2px;margin:9px 0 0 -6px;font-size:0;color:transparent;background:#666}
+.cert-guide-close {position:absolute;top:0;right:0;width:16px;height:16px;padding:10px;font-size:0;color:transparent;background:url('//image.alba.kr/sign/popover_close.png') no-repeat center center;background-size:12px 12px}
+.pc .cert-guide-link {color:#438de8}
+.mobile .cert-guide-link {color:#3457f1}
+#JoinPerson .cert-question-icon {left:77px}
+#ChangePerson .cert-question-icon {left:auto;right:90px;top:58px}
+#ChangePerson .cert-guide-layer {top:98px}
+#PwdSearchCertNum .resultWrap {position:relative}
+#PwdSearchCertNum .cert-question-icon {left:160px}
+#PwdSearchCertNum .cert-guide-layer {top:40px}
+
+/* 성명변경 */
+html#ChangeNameFrameDoc,
+body#ChangeNameFrame {min-width:auto !important;height:100%;background:#fff}
+#ChangeNameFrame #Header,
+#ChangeNameFrame #Footer {display:none !important}
+#ChangeNameFrame #Section {min-width:auto !important;width:auto !important;padding:0 !important}
+.change-name-wrapper {z-index:99999;position:fixed;top:0;right:0;bottom:0;left:0}
+.change-name-filter {z-index:999;position:fixed;top:0;right:0;bottom:0;left:0;width:100%;height:100%;background:#000;opacity:.4;filter:alpha(opacity=40)}
+.change-name-layer {z-index:1000;position:fixed;left:50%;top:50%;overflow:hidden;border-radius:6px}
+.change-name__head {height:45px;padding:0;border-bottom:1px solid #ddd;font-weight:bold;font-size:16px;line-height:45px;text-align:center;background:#fff}
+.change-name__body {padding:15px 20px}
+.change-name__description-list {margin-bottom:15px}
+.change-name__description-item {position:relative;padding-left:5px;font-size:12px;line-height:16px;letter-spacing:-1px;color:#666}
+.change-name__description-item:after {content:'';position:absolute;left:-5px;top:7px;width:2px;height:2px;border-radius:50%;background:#666}
+.change-name__input-wrap {border:1px solid #ddd}
+.change-name__row {overflow:hidden}
+.change-name__row:first-child {border-bottom:1px solid #eee;background-color:#f9f9f9}
+.change-name__label {float:left;width:90px;height:46px;padding-left:12px;font-size:14px;line-height:46px;color:#666}
+.change-name__value {overflow:hidden}
+.change-name__value--disabled {height:46px;line-height:46px;color:#bbb}
+.change-name__warning {display:none;margin-top:-7px;padding-bottom:7px;font-size:11px;color:#f00}
+.change-name__warning.show {display:block}
+.change-name__button-wrap {padding:17px 0 0;text-align:center}
+.change-name__submit {width:150px;height:43px;border-radius:25px;font-weight:bold;font-size:15px;line-height:43px;text-align:center;background:#ffe102}
+.mobile .change-name-layer {width:300px;height:340px;margin:-170px 0 0 -150px}
+
+/* 회원가입 메인 */
+@media screen and (max-width:420px){
+  .join .join-type .join-sns--col5 .sns {width:33.333% !important}
+  .join .join-type .join-sns--col5 .sns:first-child,
+  .join .join-type .join-sns--col5 .sns:nth-child(2),
+  .join .join-type .join-sns--col5 .sns:nth-child(3) {border-bottom:1px solid #eee}
+  .join .join-type .join-sns--col5 .sns:nth-child(4) {border-left:0}
+  .join .join-type .join-sns--col5 .sns:nth-child(5) {border-right:1px solid #eee}
+}
+
+.joinCaution {margin-top:20px;font-size:12px;text-align:center;letter-spacing:-0.3px;line-height:1.5;color:#999}
+.joinCaution dt {padding-bottom:6px;font-weight:bold;color:#222}
+.join .btnAction .btn {height:50px;font-size:15px;line-height:50px}
+
+html.mobile #JoinMain {height:100%}
+html.mobile #JoinMain .sign__copyright {margin-top:auto}
+html.ios .join .join-type .join-sns .sns {line-height:44px}
+
+/* sign section */
+.sign-section {position:relative}
+.join--new .sign-section + .sign-section {margin-top:20px} /* 가입 */
+.memberSearch .sign-section + .sign-section {margin-top:35px} /* 찾기 */
+.sign-section + .sign-section {margin-top:30px}
+.sign-section__title,
+.sign-section__title .tooltip__title {font-family:'HGSoftGGothicssi80g';font-size:16px;color:#000}
+.sign-section__title + .sign-section__content {margin-top:6px}
+.sign-section__title + .input-box-wrap {margin-top:8px}
+.sign-section__notice {margin-top:7px;font-size:12px;color:#9096a1;line-height:1.5}
+.sign-section__notice + .sign-section__notice {margin-top:10px}
+.sign-section__notice.refer-mark::before {color:#9096a1}
+.sign-section__notice.like-float {margin-top:4px;margin-bottom:-22px}
+
+/* 아이디/비밀번호 찾기 */
+.sign-tab {overflow:hidden;display:flex;flex-grow:0;align-items:stretch;width:100%;height:40px;border-radius:8px;background:#f2f4fa}
+.sign-tab + .sign-tab__content {margin-top:20px}
+.sign-tab__content + .sign-tab__content {margin-top:20px}
+.sign-tab__content {display:none}
+.sign-tab__content-active {display:block}
+.sign-tab__item {display:inline-block;vertical-align:top;box-sizing:border-box;height:100%;background:transparent;flex-grow:1;-ms-flex-position:1;flex-basis:0;font-size:14px;font-family:'HGSoftGGothicssi80g';color:#a2aebf;text-align:center;line-height:39px}
+.sign-tab__item--active {border-radius:8px;border:1px solid #3396fe;background:#fff;color:#2e89e5}
+
+/* 인증 선택 */
+.radio-select-box {display:flex;gap:40px;justify-content:center;align-items:center;box-sizing:border-box;height:54px;border-radius:8px;background:#f2f4fa;text-align:center}
+.radio-select-content {margin-top:10px}
+.radio-select-box span.input label{font-family:'HGSoftGGothicssi60g';font-size:14px}
+
+/* input box */
+.input-box {position:relative;overflow:hidden;box-sizing:border-box;width:100%;height:56px;border-radius:8px;border:1px solid #d3dae6;z-index:8}
+.input-box input[type="text"],
+.input-box input[type="password"],
+.input-box input[type="email"],
+.input-box input[type="url"],
+.input-box input[type="tel"],
+.input-box input[type="number"] {box-sizing:border-box;width:100%;height:54px;margin:0;padding-left:16px;border-radius:0;-webkit-appearance:none;font-size:14px;color:#000}
+.input-box label{position:absolute;top:0;left:0;display:inline-block;height:54px;padding-left:16px;font-family:'HGSoftGGothicssi60g';font-size:15px;line-height:53px;color:#9096a1}
+.input-box input[type="checkbox"] + label {position:relative;color:#4d5360}
+.input-box span.input {top:17px;left:16px}
+.input-box span.input input[type="checkbox"] {width:20px;height:20px}
+.input-box label>span{margin-left:4px;font-family:'HGSoftGGothicssi60g';font-size:14px;letter-spacing:-.3px;color:#ccd0d9}
+
+/* input 자동완성 배경 제거 */
+.input-box input:-webkit-autofill,
+.input-box input:-webkit-autofill:hover,
+.input-box input:-webkit-autofill:focus,
+.input-box input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-transition: background-color 9999s ease-out;
+  -webkit-box-show: 0 0 0px 1000px white inset !important;
+  -webkit-test-fill-color: #fff !important
+}
+
+.input-box.valid--error{border-color:#f04452}
+
+.input-box.disabled {overflow:hidden}
+.input-box.disabled input {background:#f3f4f7}
+.input-box.disabled input + label {color:#a2aebf}
+
+.input-box.fixed.bg-gray {background:#f3f4f7}
+.input-box .fixed-label {position:absolute;top:12px;left:16px;width:auto;height:auto;margin:0;padding:0;color:#9096a1;font-size:12px;line-height:1;font-family:'HGSoftGGothicssi60g'}
+.input-box .fixed-data {box-sizing:border-box;height:54px;padding-top:27px;padding-left:16px;font-size:14px;color:#000}
+.input-box .fixed-data.color-gray {color:#a2aebf}
+
+.input-box input::placeholder {font-size:15px;font-family:'HGSoftGGothicssi60g';line-height:53px;color:#9096a1}
+.input-box input::-webkit-input-placeholder{font-size:15px;font-family:'HGSoftGGothicssi60g';line-height:53px;color:#9096a1}
+.input-box .text-box {height:54px;padding-left:16px;font-size:15px;font-family:'HGSoftGGothicssi60g';line-height:53px;color:#9096a1}
+
+.input-box-wrap {display:block}
+.input-box-wrap + .input-box-wrap {margin-top:24px}
+.input-box-wrap li.input-box:first-child {border-radius:8px 8px 0 0}
+.input-box-wrap li.input-box:last-child {border-radius:0 0 8px 8px}
+.input-box-wrap li.input-box{border-radius:0}
+.input-box-wrap .input-box:only-child,
+.input-box.only {border-radius:8px !important}
+.input-box-wrap .input-box + .input-box {margin-top:-1px}
+.hide-last-child {border-bottom-left-radius:8px !important;border-bottom-right-radius:8px !important}
+.unit {position:absolute;top:50%;right:16px;margin-top:-9px;font-size:15px;line-height:18px;color:#9096a1;font-family:'HGSoftGGothicssi60g'}
+
+.input-box .has-label {box-sizing:border-box;height:54px;padding-top:20px;padding-left:16px;font-size:16px;color:#000}
+.input-box .has-label + label {position:absolute;top:12px;left:16px;width:auto;height:auto;margin:0;padding:0;color:#9096a1;font-size:12px;line-height:1;}
+.input-box .has-label + label>span {color:#9096a1;font-size:12px;line-height:1}
+
+.box-in-button{position:absolute;top:calc(50% - 17px);right:16px;vertical-align:top;box-sizing:border-box;width:100px;height:34px;border-radius:6px;border:1px solid #3396fe;background:#fff;line-height:33px;font-size:13px;font-family:'HGSoftGGothicssi80g';font-weight:normal;color:#2e89e5;text-align:center;letter-spacing:0}
+.box-in-button--off {border-color:#ced3db;color:#959ba6}
+.box-in-button--on {border-color:#ced3db}
+.box-in-button--hide {display:none}
+
+.btn-arrow-text {display:inline-block;margin-top:9px;padding:0 9px 0 4px;background:url('//image.alba.kr/sign/icon_arrow_blue3.png') 100% 50% /6px no-repeat;font-size:12px;line-height:18px;color:#3396fe;font-weight:bold;text-decoration:underline !important;letter-spacing:-.5px}
+
+/* 셀렉트박스 */
+.sign-select {display:flex}
+.sign-select__tit {box-sizing:border-box;vertical-align:top;position:relative !important;padding-left:16px;width:83px}
+select.sign-select__cont {width:calc(100% - 102px);height:54px;box-sizing:border-box;padding:0 20px 0 0;border-radius:0;line-height:53px;-webkit-appearance:none;font-size:15px;color:#000;background:url('//image.alba.kr/m/resume/select_arrow.png') no-repeat;background-size:8px 6px;background-position:right center}
+
+/* 성별 라디오 버튼 */
+.select-gender {z-index:8;position:absolute;top:10px;right:16px;font-size:0}
+.select-gender input[type="radio"] {position:absolute;top:0;left:0}
+.select-gender input[type="radio"] + label {display:inline-block;vertical-align:top;box-sizing:border-box;width:46px;height:34px;margin-left:7px;border-radius:6px;border:1px solid #ced3db;background:#fff;text-align:center;font-size:13px;font-family:'HGSoftGGothicssi80g';color:#9096a1;line-height:33px}
+.select-gender input[type="radio"]:checked + label {border:1px solid #3396fe;color:#2e89e5}
+
+/* validation check */
+.valid-check input {background:url('//image.alba.kr/sign/icon_check_red.png') right 16px center /16px 16px no-repeat}
+.valid-check.on input {background:url('//image.alba.kr/sign/icon_check_green.png') right 16px center /16px 16px no-repeat}
+.valid-check .password-view-btn {right:34px}
+
+.placeholder-input.active + label {display:none}
+.placeholder-input:-webkit-autofill + label {display:none}
+
+/* 연락처 입력 */
+.input-tel {display:flex;align-items:center}
+.input-tel__tit {box-sizing:border-box;width:83px;padding:0 28px 0 16px;font-size:15px;font-family:'HGSoftGGothicssi60g';color:#9096a1;white-space:nowrap}
+.input-tel__cont {display:flex}
+.input-tel__cont-select {width:127px}
+.input-tel__cont-select select {box-sizing:border-box;width:100%;height:54px;padding:0 20px 0 0;border-radius:0;line-height:53px;-webkit-appearance:none;font-size:15px;color:#000;background:url('//image.alba.kr/m/resume/select_arrow.png') no-repeat;background-size:8px 6px;background-position:right center}
+.input-tel__cont-select select option {color:#000}
+.input-tel__cont-select select:valid {color:#000}
+.input-tel__cont-num {position:relative;padding-left:25px}
+.input-tel__cont-num::before {content:'';position:absolute;top:50%;left:13px;width:1px;height:20px;margin-top:-10px;background:#e1e7f0}
+.input-tel__cont-num input[type="tel"] {padding-left:0}
+
+/* 로그인 사용중 노출 */
+.sign-section__topwrap {display:none;margin-bottom:30px}
+.sign-section__topwrap.on {display:block}
+.sign-section.login .input-box {border:1px solid #f0f2f5;background:#f7f8fa}
+.sign-section.login .input-box .text-box {font-family:'Malgun Gothic';font-size:14px;color:#555}
+.sign-section.login .input-box .sns {display:inline-block;width:20px;height:20px;margin:17px 6px 0px 0px;vertical-align:top}
+.sign-section.login .input-box .sns--naver {background: url(//image.alba.kr/sns/icon_sns_naver.svg) 0 0 / contain no-repeat}
+.sign-section.login .input-box .sns--kakao {background: url(//image.alba.kr/sns/icon_sns_kakao.svg) 0 0 / contain no-repeat}
+.sign-section.login .input-box .sns--apple {background: url(//image.alba.kr/sns/icon_sns_apple.svg) 0 0 / contain no-repeat}
+.sign-section.login .input-box .sns--facebook {background: url(//image.alba.kr/sns/icon_sns_facebook.svg) 0 0 / contain no-repeat}
+.sign-section.login .login-info {padding:9px 0 30px 4px;font-size:12px;color:#8f959f}
+html.ios .sign-section.login .input-box .text-box {line-height:56px}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+{% include 'head.html' %}
+<body>
+        {% include 'header.html' %}
+        <hr>
+        {% block contents %}
+        <div style="width: 1500px; justify-content: center; margin: 0 auto;">
+          
+            <table>
+                <thead>
+                  <tr>
+                    <th>요일</th>
+                    <th>오픈</th>
+                    <th>중간</th>
+                    <th>마감</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for timetable in timetable_list %}
+                    <tr>
+                      <td>{{ timetable.day }}</td>
+                      <td>{{ timetable.open_mon ? 'O' : 'X' }}</td>
+                      <td>{{ timetable.mid_mon ? 'O' : 'X' }}</td>
+                      <td>{{ timetable.close_mon ? 'O' : 'X' }}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+
+    </div >
+    {% endblock %}
+        <hr>
+        {% include 'footer.html' %}
+</body>
+</html>

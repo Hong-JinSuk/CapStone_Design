@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>알바마켓</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body, h1, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+/* Map section styles */
+.map {
+  height: 250px;
+  text-align: left; /* 가운데 정렬 추가 */
+}
+
+.map-container {
+  width: 50%;
+  height: 200px;
+  margin: 0 auto;
+  border: 3px solid #ccc;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.search-box {
+  width: 300px;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: -150px;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 0 10px;
+  font-size: 16px;
+}
+
+.search-box button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 5px 15px;
+  cursor: pointer;
+}
+
+
+
+/* Board section styles */
+.board-container {
+  width: 47%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 3px solid #ccc;
+  border-radius: 20px;
+  overflow-y: auto; /* 스크롤 가능하도록 수정 */
+  max-height: 400px; /* 최대 높이 조정 */
+  margin-top: 50px; /* 상단 여백 추가 */
+}
+
+/* 시간표 스타일 */
+.timetable {
+  margin-top: 20px;
+  position: relative;
+}
+
+
+table {
+  width: 50%; /* 가로 크기를 50%로 설정하여 절반으로 줄임 */
+  margin: 0 auto; /* 가운데 정렬 */
+  border-collapse: separate;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+  border-radius: 20px; /* 테두리를 둥글게 만듭니다. */
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+
+
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.profile {
+  width: 100px; /* 프로필 이미지의 가로 크기를 조절합니다. */
+  margin-left: 90px; /* 지도와의 간격을 설정합니다. */
+  margin-top:50px;
+}
+
+.profile img {
+  width: 100%; /* 이미지가 부모 요소에 맞게 확대/축소되도록 설정합니다. */
+  border-radius: 50%; /* 원형 프로필 사진을 만듭니다. */
+}
+
+.profile h2 {
+  margin-left: 10px; /* 원하는 여백 크기로 조정 */
+}
+
+.vertical-buttons {
+  display: flex;
+  flex-direction: column; /* 세로로 배치하기 위해 컬럼 방향으로 설정 */
+  float: left;
+  margin-bottom: 10px;
+  margin-top: 20px; /* 원하는 만큼 조절 */
+  margin-left: 70px;
+}
+
+.vertical-buttons a {
+  display: block;
+  margin-bottom: 10px;
+  padding: 5px 20px; /* 버튼 내부 패딩 조절 */
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+}
+  
+  .vertical-buttons a:hover {
+    background-color: #8c83d7; /* 마우스 오버 시 배경색 변경 */
+  }
+  
+</style>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li class="logo"><a href="#">알바마켓</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="profile">
+    <a href= " ">
+      <img src="C:\Users\82108\Desktop\profile.jpeg" alt="프로필 사진">
+    </a>
+    <h2>프로필</h2>
+  </div>
+  
+  <div class="vertical-buttons">
+    <a href="#">커뮤니티</a>
+    <a href="#">이력서 관리</a>
+  </div>
+  
+
+  <section class="map">
+    <div class="search-box">
+      <input type="text" placeholder="검색">
+    </div>
+    <div class="map-container">
+      <img src="map.jpg" alt="Map">
+    </div>
+  </section>
+
+
+
+<div class="board-container">
+    <h2>채용공고</h2>
+    <div class="board-list">
+      <div class="board-item">
+        <h3>제목</h3>
+        <div id="content">내용</div>
+        <p>작성자</p>
+        <p>조회수</p>
+      </div>
+      <div class="board-item">
+        <h3>제목</h3>
+        <div id="content">내용</div>
+        <p>작성자</p>
+        <p>조회수</p>
+      </div>
+      <div class="board-item">
+        <h3>제목</h3>
+        <div id="content">내용</div>
+        <p>작성자</p>
+        <p>조회수</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="timetable">
+    <table>
+      <tr>
+        <th> </th>
+        <th>월요일</th>
+        <th>화요일</th>
+        <th>수요일</th>
+        <th>목요일</th>
+        <th>금요일</th>
+        <th>토요일</th>
+        <th>일요일</th>
+      </tr>
+      <tr>
+        <td>오픈</td>
+        <td>08:00 AM</td>
+        <td>08:00 AM</td>
+        <td>08:00 AM</td>
+        <td>08:00 AM</td>
+        <td>08:00 AM</td>
+        <td>09:00 AM</td>
+        <td>09:00 AM</td>
+      </tr>
+      <tr>
+        <td>미들</td>
+        <td>12:00 PM</td>
+        <td>12:00 PM</td>
+        <td>12:00 PM</td>
+        <td>12:00 PM</td>
+        <td>12:00 PM</td>
+        <td>04:00 PM</td>
+        <td>04:00 PM</td>
+      </tr>
+      <tr>
+        <td>마감</td>
+        <td>06:00 PM</td>
+        <td>06:00 PM</td>
+        <td>06:00 PM</td>
+        <td>06:00 PM</td>
+        <td>06:00 PM</td>
+        <td>04:00 PM</td>
+        <td>04:00 PM</td>
+      </tr>
+    </table>
+  </section>
+  
+  
+  
+  
+
+  <footer>
+    <p>&copy; 알바 마켓</p>
+  </footer>
+</body>
+</html>

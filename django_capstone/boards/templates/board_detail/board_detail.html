@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+{% include 'head.html' %}
+<body>
+        {% include 'header.html' %}
+        <hr>
+        {% block contents %}
+        <div style="width: 1500px; justify-content: center; margin: 0 auto;">
+        <div class="row mt-5">
+          <div class="col-12">
+              <div class="form-group">
+                  <label for="title">제목</label>
+                  <input type="text" class="form-control" id="title" value="{{ board.title }}">
+                  <label for="contents">내용</label>
+                  <textarea class="form-control" cols="100">{{ board.contents }}</textarea>
+              </div>
+              <button class="btn btn-primary" onclick="location.href='/boards/list/'">돌아가기</button>
+          </div>
+      </div>
+    </div>
+      {% endblock %}
+        <hr>
+        {% include 'footer.html' %}
+</body>
+</html>
