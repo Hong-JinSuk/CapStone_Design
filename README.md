@@ -21,7 +21,7 @@
 - [x] 4/8 algorithm function setting
 - [x] 4/28 feedback by professor
 - [x] 5/1 Submission of mid-course
-- [x] 7/1~8/31 Django Study
+- [x] 7/1~8/31 Django Study & Deployment and Recommendation Algorithm Study
 - [x] 10/1~10/17 User Interface Renewal & Implementation of features
 - [x] 11/2 College of Electrical & Computing Engineering Capstone Design Exhibition
 - [x] 11/9 Final PPT presentation
